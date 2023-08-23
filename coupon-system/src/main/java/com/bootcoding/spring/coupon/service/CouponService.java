@@ -35,9 +35,7 @@ public class CouponService {
 
     public Coupon generateNewCoupon() {
         Coupon coupon = Coupon.builder()
-                .id(UUID.randomUUID().toString())
-                .validFor(5 + new Random().nextInt(90))
-                .type("COUPON")
+                .couponCode(UUID.randomUUID().toString())
                 .build();
         return coupon;
     }
@@ -65,8 +63,10 @@ public class CouponService {
         return null;
     }
 
-    public List<User> getUsers() {
-        return users;
-    }
-    // Search an element in array
+
+
+
+
+
+
 }

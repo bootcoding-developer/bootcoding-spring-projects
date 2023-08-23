@@ -1,13 +1,34 @@
 package com.bootcoding.spring.coupon.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 @Builder
+@Entity
 public class Coupon {
-    private String id;
+    @Id
+    @GeneratedValue
+    private int id;
+    private String title;
+    private String description;
+    @Column(name = "coupon_code")
+    private String couponCode;
     private String type;
-    private int validFor;
-
+    private String category;
+    @Column(name = "validity_date")
+    private Date validityDate;
+    @Column(name = "created_date")
+    private Date createdDate;
+    @Column(name = "created_by")
+    private String createdBy;
+    private String status;
+    @Column(name = "active")
+    private boolean isActive;
 }

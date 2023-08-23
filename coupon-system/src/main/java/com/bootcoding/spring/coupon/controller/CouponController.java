@@ -63,9 +63,9 @@ public class CouponController {
     public Coupon getDummyJson(){
         System.out.println("/getJson invoked");
         return Coupon.builder()
-                .id(couponService.newCoupon())
+                .couponCode(couponService.newCoupon())
                 .type("Voucher")
-                .validFor(3).build();
+                .build();
     }
 
     @GetMapping("getMultipleCoupons")
